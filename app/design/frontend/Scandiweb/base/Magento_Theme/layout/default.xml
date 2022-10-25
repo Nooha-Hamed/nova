@@ -8,9 +8,18 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="header.container">
-            <container name="free.ship.container" label="free shipping container" htmlClass="header-banner" htmlTag="div" before="-">
-                <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header" template="Magento_Theme::html/customheader.phtml" before="-"/>
+            <container name="free.ship.container" label="free shipping container" htmlClass="header-banner"
+                       htmlTag="div" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header"
+                       template="Magento_Theme::html/customheader.phtml" before="-"/>
             </container>
         </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <container name="newsletter.new.container" htmlTag="div" htmlClass="page-bottom"
+                       after="main.content"></container>
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="newsletter.new.container" before="-"/>
     </body>
 </page>
